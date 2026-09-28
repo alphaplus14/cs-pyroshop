@@ -6,8 +6,8 @@ const CONFIG = {
   brand: "C&S Pyroshop",
 
   // Número de WhatsApp con indicativo 57, sin "+" ni espacios.
-  whatsapp: "573165728348",
-  whatsappDisplay: "+57 316 572 8348",
+  whatsapp: "573133557883",
+  whatsappDisplay: "+57 313 355 7883",
 
   // Zona de entrega (se usa en la franja de confianza y el footer).
   zone: "Cartago (Valle del Cauca)",
@@ -33,7 +33,22 @@ const CONFIG = {
   paymentMethods: ["Nequi", "Nu", "Bancolombia", "Efectivo", "Pago contra entrega"],
 
   // Reseñas de clientes reales. La sección "Lo que dicen de nosotros" solo aparece
-  // cuando hay al menos una. place (barrio) es opcional. Ejemplo:
-  //   { name: "Laura M.", place: "Centro", text: "Llegó a tiempo y todo funcionó.", rating: 5 },
-  reviews: [],
+  // cuando hay al menos una. place (barrio) es opcional.
+  reviews: [
+    {
+      name: "Juan M.",
+      text: "Excelente atención y muy buena presentación de los productos. El proceso de compra fue rápido y todo llegó en perfecto estado.",
+      rating: 5,
+    },
+    {
+      name: "Laura P.",
+      text: "Muy buena experiencia. Me explicaron las opciones disponibles y fueron muy atentos durante todo el proceso. Volvería a comprar.",
+      rating: 5,
+    },
+    {
+      name: "Andrés R.",
+      text: "Me gustó mucho la atención y la variedad. Todo fue claro desde el principio y recibí exactamente lo que había solicitado.",
+      rating: 5,
+    },
+  ],
 };
