@@ -47,7 +47,7 @@ const CONFIG = {
     },
     {
       name: "Andrés R.",
-      text: "Me gustó mucho la atención y la variedad. Todo fue claro desde el principio y recibí exactamente lo que había solicitado.",
+      text: "Me gustó mucho los volcanes. Todo fue claro desde el principio y recibí exactamente lo que había solicitado.",
       rating: 5,
     },
   ],
