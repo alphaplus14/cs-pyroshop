@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/filters.css" />
 
     <script src="js/config.js" defer></script>
     <script src="js/data.js" defer></script>
@@ -37,6 +38,7 @@
         </a>
         <nav class="main-nav" aria-label="Principal">
           <a href="#catalogo">Productos</a>
+          <a href="#combos">Combos</a>
         </nav>
       </div>
     </header>
@@ -73,7 +75,20 @@
             <span class="eyebrow">Catálogo</span>
             <h2 class="section-title" id="catalogo-title">Nuestros productos</h2>
           </div>
-          <div class="product-grid" id="product-grid"></div>
+          <div class="filters" id="filters" role="toolbar" aria-label="Filtrar por categoría"></div>
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section combos" id="combos" aria-labelledby="combos-title">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Ahorra más</span>
+            <h2 class="section-title" id="combos-title">Combos para celebrar</h2>
+            <p class="section-sub">Todo lo que necesitas para tu noche, a mejor precio que por separado.</p>
+          </div>
+          <!-- Los combos se editan en js/data.js (COMBOS) -->
+          <div class="combos-grid" id="combos-grid"></div>
         </div>
       </section>
     </main>
