@@ -3,7 +3,7 @@
 (() => {
   const AGE_KEY = "cs_age_ok";
 
-  const fill = (text) => text.replace("{zone}", CONFIG.zone).replace("{deliveryTime}", CONFIG.deliveryTime);
+  const fill = (text) => text.replace("{zone}", CONFIG.zone);
 
   function renderTrust() {
     const list = $("#trust-list");
@@ -29,7 +29,7 @@
           ${r.placeholder ? '<span class="tag tag-example">Reseña de ejemplo</span>' : ""}
           <div class="stars" aria-label="${r.rating} de 5 estrellas">${ICONS.star.repeat(r.rating)}</div>
           <blockquote>“${escapeHtml(r.text)}”</blockquote>
-          <figcaption><strong>${escapeHtml(r.name)}</strong> · ${escapeHtml(r.place)}</figcaption>
+          <figcaption><strong>${escapeHtml(r.name)}</strong>${r.place ? ` · ${escapeHtml(r.place)}` : ""}</figcaption>
         </figure>`
       )
       .join("");

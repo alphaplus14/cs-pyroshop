@@ -1,5 +1,5 @@
 /* ==========================================================
-   Confianza, reseñas, seguridad, aviso +18 y verificación de edad
+   Confianza, reseñas, aviso +18 y verificación de edad
    ========================================================== */
 
 /* ---------- Franja de confianza ---------- */
@@ -11,7 +11,7 @@
 .trust-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px 12px;
   padding: 20px 0;
 }
@@ -46,9 +46,9 @@
   height: 22px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .trust-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 24px 0;
   }
 }
@@ -130,56 +130,6 @@
 
 .review figcaption strong {
   color: var(--text-2);
-}
-
-/* ---------- Seguridad ---------- */
-.safety {
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.safety-list {
-  list-style: none;
-  display: grid;
-  gap: 12px;
-  counter-reset: tip;
-}
-
-@media (min-width: 700px) {
-  .safety-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .safety-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.safety-list li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 16px;
-  border-radius: var(--radius);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text-2);
-  font-size: 0.93rem;
-}
-
-.safety-list li strong {
-  display: block;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-
-.safety-emoji {
-  flex: none;
-  font-size: 1.5rem;
-  line-height: 1;
 }
 
 /* ---------- Modal de edad ---------- */

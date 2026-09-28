@@ -64,11 +64,31 @@
   font-size: 1.05rem;
 }
 
-.hero-logo {
+/* Logo del hero: tamaño contenido dentro de un halo circular */
+.hero-visual {
   display: none;
+  position: relative;
   justify-self: center;
-  width: min(420px, 100%);
-  filter: drop-shadow(0 0 40px rgba(255, 150, 40, 0.25));
+  width: min(400px, 100%);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 150, 40, 0.14) 0%, rgba(212, 165, 49, 0.06) 45%, transparent 70%);
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.hero-logo {
+  position: relative;
+  width: 80%;
+  height: auto;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.5));
 }
 
 /* Oferta de temporada */
@@ -119,11 +139,11 @@
 
 @media (min-width: 900px) {
   .hero-inner {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     padding: 80px 16px 88px;
   }
 
-  .hero-logo {
-    display: block;
+  .hero-visual {
+    display: grid;
   }
 }
