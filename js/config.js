@@ -9,6 +9,10 @@ const CONFIG = {
   whatsapp: "573165728348",
   whatsappDisplay: "+57 316 572 8348",
 
+  // ⚠️ Zona de entrega y tiempo (se usan en la franja de confianza y el footer).
+  zone: "[TU ZONA DE ENTREGA]",
+  deliveryTime: "[TIEMPO DE ENTREGA, p. ej. 24 horas]",
+
   // Oferta de temporada que aparece en el hero. Pon enabled: false para ocultarla.
   offer: {
     enabled: true,
@@ -19,10 +23,11 @@ const CONFIG = {
   },
 
   // Franja de confianza debajo del hero. icon: truck | card | clock | shield
+  // {zone} y {deliveryTime} se reemplazan por los valores de arriba.
   trust: [
-    { icon: "truck", title: "Entrega a domicilio", text: "[TU ZONA DE ENTREGA]" }, // ⚠️
+    { icon: "truck", title: "Entrega a domicilio", text: "{zone}" },
     { icon: "card", title: "Paga como quieras", text: "Nequi, Daviplata o efectivo contra entrega" },
-    { icon: "clock", title: "Entrega rápida", text: "[TIEMPO DE ENTREGA, p. ej. 24 horas]" }, // ⚠️
+    { icon: "clock", title: "Entrega rápida", text: "{deliveryTime}" },
     { icon: "shield", title: "Compra segura", text: "Confirmas tu pedido por WhatsApp" },
   ],
 

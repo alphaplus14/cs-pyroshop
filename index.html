@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/products.css" />
     <link rel="stylesheet" href="css/filters.css" />
     <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/trust.css" />
 
     <script src="js/config.js" defer></script>
     <script src="js/data.js" defer></script>
@@ -28,6 +29,7 @@
     <script src="js/catalog.js" defer></script>
     <script src="js/cart.js" defer></script>
     <script src="js/hero.js" defer></script>
+    <script src="js/trust.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
@@ -41,6 +43,7 @@
         <nav class="main-nav" aria-label="Principal">
           <a href="#catalogo">Productos</a>
           <a href="#combos">Combos</a>
+          <a href="#seguridad">Seguridad</a>
         </nav>
         <button type="button" class="cart-toggle" aria-label="Ver pedido" aria-controls="cart-drawer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" /><circle cx="10" cy="20.5" r="1.3" /><circle cx="17" cy="20.5" r="1.3" /></svg>
@@ -63,7 +66,7 @@
             </p>
             <div class="hero-actions">
               <a class="btn btn-fire" href="#catalogo">Ver productos</a>
-              <a class="btn btn-ghost" href="https://wa.me/573165728348" target="_blank" rel="noopener">Escríbenos</a>
+              <a class="btn btn-ghost" href="https://wa.me/573165728348" data-wa target="_blank" rel="noopener">Escríbenos</a>
             </div>
             <!-- La oferta se edita en js/config.js (CONFIG.offer) -->
             <div class="offer" id="offer" hidden>
@@ -76,12 +79,23 @@
         </div>
       </section>
 
+      <!-- Los textos de la franja se editan en js/config.js (CONFIG.trust) -->
+      <section class="trust" aria-label="Por qué comprarnos">
+        <div class="container">
+          <ul class="trust-list" id="trust-list"></ul>
+        </div>
+      </section>
+
       <section class="section" id="catalogo" aria-labelledby="catalogo-title">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">Catálogo</span>
             <h2 class="section-title" id="catalogo-title">Nuestros productos</h2>
           </div>
+          <p class="age-notice" role="note">
+            <span class="age-badge" aria-hidden="true">+18</span>
+            <span><strong>Venta exclusiva para mayores de 18 años.</strong> Prohibida la manipulación por menores de edad.</span>
+          </p>
           <div class="filters" id="filters" role="toolbar" aria-label="Filtrar por categoría"></div>
           <div class="product-grid" id="product-grid" aria-live="polite"></div>
         </div>
@@ -98,6 +112,53 @@
           <div class="combos-grid" id="combos-grid"></div>
         </div>
       </section>
+
+      <section class="section" id="resenas" aria-labelledby="resenas-title">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Clientes felices</span>
+            <h2 class="section-title" id="resenas-title">Lo que dicen de nosotros</h2>
+          </div>
+          <!-- Las reseñas se editan en js/config.js (CONFIG.reviews) -->
+          <div class="reviews-grid" id="reviews-grid"></div>
+        </div>
+      </section>
+
+      <section class="section safety" id="seguridad" aria-labelledby="seguridad-title">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Diviértete seguro</span>
+            <h2 class="section-title" id="seguridad-title">Recomendaciones de seguridad</h2>
+            <p class="section-sub">La mejor celebración es la que termina sin accidentes.</p>
+          </div>
+          <ul class="safety-list">
+            <li>
+              <span class="safety-emoji" aria-hidden="true">👨‍👧</span>
+              <span><strong>Siempre con un adulto</strong>Los menores de edad no deben manipular pólvora. Un adulto responsable enciende y supervisa.</span>
+            </li>
+            <li>
+              <span class="safety-emoji" aria-hidden="true">📏</span>
+              <span><strong>Guarda distancia</strong>Enciende en espacios abiertos, lejos de personas, animales, casas, cables y vehículos.</span>
+            </li>
+            <li>
+              <span class="safety-emoji" aria-hidden="true">🔥</span>
+              <span><strong>Lejos de lo inflamable</strong>Aléjate de pasto seco, telas, combustibles y del resto de tus productos al encender.</span>
+            </li>
+            <li>
+              <span class="safety-emoji" aria-hidden="true">🪣</span>
+              <span><strong>Ten agua cerca</strong>Un balde con agua o arena y un extintor a mano. Remoja los restos al terminar.</span>
+            </li>
+            <li>
+              <span class="safety-emoji" aria-hidden="true">🚫</span>
+              <span><strong>No reenciendas</strong>Si un producto no funcionó, no te acerques ni lo vuelvas a encender. Espera y cúbrelo con agua.</span>
+            </li>
+            <li>
+              <span class="safety-emoji" aria-hidden="true">🍺</span>
+              <span><strong>Sin alcohol</strong>Quien enciende la pólvora no debe haber consumido alcohol. Sigue las instrucciones del empaque.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -106,18 +167,38 @@
           <div class="footer-brand">
             <img src="assets/img/logo.webp" alt="C&amp;S Pyroshop" width="629" height="448" loading="lazy" />
             <p>Pólvora y pirotecnia para iluminar tus mejores momentos.</p>
+            <!-- Las redes se editan en js/config.js (CONFIG.social) -->
+            <div class="social-links" id="social-links" aria-label="Redes sociales"></div>
           </div>
           <div>
             <h3>Contacto</h3>
             <ul>
               <li>
-                <a href="https://wa.me/573165728348" target="_blank" rel="noopener">WhatsApp +57 316 572 8348</a>
+                <a href="https://wa.me/573165728348" data-wa target="_blank" rel="noopener">
+                  WhatsApp <span data-wa-display>+57 316 572 8348</span>
+                </a>
               </li>
+              <li><span>Entregas: <span data-zone>[TU ZONA DE ENTREGA]</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tienda</h3>
+            <ul>
+              <li><a href="#catalogo">Productos</a></li>
+              <li><a href="#combos">Combos</a></li>
+              <li><a href="#seguridad">Recomendaciones de seguridad</a></li>
             </ul>
           </div>
         </div>
         <div class="legal">
-          <p>© <span id="year">2026</span> C&amp;S Pyroshop.</p>
+          <p>
+            <strong>Venta exclusiva para mayores de 18 años. Prohibida la manipulación por menores de edad.</strong>
+          </p>
+          <p>
+            El uso de artículos pirotécnicos está sujeto a la normativa nacional y a las restricciones de cada
+            municipio. Úsalos con responsabilidad y siguiendo las instrucciones del fabricante.
+          </p>
+          <p>© <span data-year>2026</span> C&amp;S Pyroshop. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
@@ -165,7 +246,7 @@
                 </div>
               </fieldset>
             </div>
-        </div>
+          </div>
           <div class="cart-footer">
             <div class="cart-total">
               <span>Total</span>
@@ -185,10 +266,28 @@
     </div>
 
     <!-- Botón flotante de WhatsApp para consultas -->
-    <a class="whatsapp-float" id="whatsapp-float" href="https://wa.me/573165728348?text=%C2%A1Hola!%20Quiero%20consultar%20sobre%20sus%20productos"
+    <a class="whatsapp-float" id="whatsapp-float" href="https://wa.me/573165728348" data-wa
       target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" /></svg>
     </a>
+
+    <!-- Verificación de edad (se recuerda en localStorage) -->
+    <div class="modal" id="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-desc" hidden>
+      <div class="modal-dialog age-dialog">
+        <img src="assets/img/logo.webp" alt="C&amp;S Pyroshop" width="629" height="448" />
+        <h2 id="age-title">¿Eres mayor de 18 años?</h2>
+        <p id="age-desc">
+          La venta de pólvora es exclusiva para mayores de edad. Prohibida la manipulación por menores de edad.
+        </p>
+        <div class="age-actions">
+          <button type="button" class="btn btn-fire btn-block age-yes">Sí, soy mayor de 18</button>
+          <button type="button" class="btn btn-ghost btn-block age-no">No, soy menor de edad</button>
+        </div>
+        <p class="age-denied" tabindex="-1" hidden>
+          Lo sentimos, no podemos venderte productos pirotécnicos. Pídele a un adulto responsable que haga el pedido.
+        </p>
+      </div>
+    </div>
 
     <!-- Modal de video -->
     <div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-labelledby="video-title" hidden>

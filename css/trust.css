@@ -1,0 +1,224 @@
+/* ==========================================================
+   Confianza, reseñas, seguridad, aviso +18 y verificación de edad
+   ========================================================== */
+
+/* ---------- Franja de confianza ---------- */
+.trust {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 12px;
+  padding: 20px 0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.trust-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.trust-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(212, 165, 49, 0.12);
+  color: var(--gold-light);
+}
+
+.trust-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (min-width: 900px) {
+  .trust-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 24px 0;
+  }
+}
+
+/* ---------- Aviso +18 ---------- */
+.age-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 90, 90, 0.45);
+  background: rgba(255, 90, 90, 0.08);
+  color: var(--text);
+  font-size: 0.92rem;
+  margin-bottom: 24px;
+}
+
+.age-badge {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--danger);
+  color: #ff8a8a;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* ---------- Reseñas ---------- */
+.reviews-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 800px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.review {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review .tag {
+  align-self: flex-start;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--gold);
+}
+
+.stars svg {
+  width: 18px;
+  height: 18px;
+}
+
+.review blockquote {
+  color: var(--text);
+}
+
+.review figcaption {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.review figcaption strong {
+  color: var(--text-2);
+}
+
+/* ---------- Seguridad ---------- */
+.safety {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.safety-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  counter-reset: tip;
+}
+
+@media (min-width: 700px) {
+  .safety-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .safety-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.safety-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 0.93rem;
+}
+
+.safety-list li strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.safety-emoji {
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* ---------- Modal de edad ---------- */
+.age-dialog {
+  max-width: 440px;
+  text-align: center;
+  padding: 28px 24px 24px;
+}
+
+.age-dialog img {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 12px;
+}
+
+.age-dialog h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.age-dialog p {
+  color: var(--text-2);
+  margin-bottom: 20px;
+}
+
+.age-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.age-actions[hidden],
+.age-denied[hidden] {
+  display: none;
+}
+
+.age-denied {
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 90, 90, 0.1);
+  border: 1px solid rgba(255, 90, 90, 0.45);
+  color: var(--text);
+}
