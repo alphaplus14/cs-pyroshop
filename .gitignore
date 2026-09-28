@@ -1,0 +1,7 @@
+# Videos pesados que no usa la página (los videos están en YouTube)
+*.mp4
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C&I Pyroshop - Pólvora y Pirotecnia</title>
+    <link
+      rel="icon"
+      href="./assets/fotosPolvora/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo-container">
+          <img
+            src="/assets/fotosPolvora/20251125_2013_image.png"
+            alt="C&I Pyroshop"
+            id="logo"
+          />
+        </div>
+
+        <div class="title-container">
+          <h1>🔥 C&I PYROSHOP 🔥</h1>
+          <p>La mejor pólvora y pirotecnia para tus celebraciones</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="products">
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/PYRO-SPARKLER-2025-Photoroom-1000x1000.jpg"
+          alt="Chispitas"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Chispitas</h3>
+          <div class="product-unit">Caja X 6</div>
+          <div class="price-video-container">
+            <div class="product-price">$2.500</div>
+          </div>
+          <button class="buy-btn" onclick="comprar('Chispitas', 2500)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/VOLADOR-5G-2025-Photoroom-1000x743.jpg"
+          alt="Volador 5 golpes"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Volador 5 Golpes</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$9.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Volador 5 Golpes', 'volador5')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Volador 5 Golpes', 9000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Bengala15T2.jpg"
+          alt="Bengalas 15 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Bengalas 15 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$8.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Bengalas 15 T', 'bengalas15')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Bengalas 15 T', 8000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Bengala30T2.jpg"
+          alt="Bengalas 30 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Bengalas 30 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$13.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Bengalas 30 T', 'bengalas30')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Bengalas 30 T', 13000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/MINI-FUENTE-2025-Photoroom-1000x743.jpg"
+          alt="Fuente Krazy"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Fuente Krazy</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$8.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Fuente Krazy', 'krazy')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Fuente Krazy', 8000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Rosita.jpeg"
+          alt="Rosita"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Rosita</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$2.500</div>
+            <button class="video-btn" onclick="verVideo('Rosita', 'rosita')">
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Rosita', 2500)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/SILVER-2025-Photoroom-1000x743.jpg"
+          alt="Volcán Silver"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Volcán Silver</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$7.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Volcán Silver', 'silver')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Volcán Silver', 7000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/apolo-1000x1333.jpg"
+          alt="Voladores"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Voladores</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$4.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Voladores', 'voladores')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Voladores', 4000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Mini-Volcan-scaled-1000x750.jpg"
+          alt="Mini Volcán"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Mini Volcán</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$2.000</div>
+          </div>
+          <button class="buy-btn" onclick="comprar('Mini Volcán', 2000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/SUPER-BLITZ-2025-Photoroom-1000x1000.jpg"
+          alt="Super Blitz"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Super Blitz</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$8.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Super Blitz', 'superblitz')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Super Blitz', 8000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/totes.jpg"
+          alt="Totets"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Totes</h3>
+          <div class="product-unit">Caja X 20</div>
+          <div class="price-video-container">
+            <div class="product-price">$16.000</div>
+          </div>
+          <button class="buy-btn" onclick="comprar('Totets', 16000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/GATLING-WEB-Photoroom-1000x1000.jpg"
+          alt="Gatling Grande"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Gatling Grande</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$200.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Gatling Grande', 'GatlingG')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Gatling Grande', 200000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/GATLING-SMALL-WEB-Photoroom-1000x1000.jpg"
+          alt="Gatling pequeña"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Gatling pequeña</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$90.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Gatling pequeña', 'GatlingP')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Gatling pequeña', 90000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Aquiles-16T-1000x1040.jpg"
+          alt="Tortas 16 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 16 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$55.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 16 T', 'torta16')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 16 T',55000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/ANGRY PNG-Photoroom.png"
+          alt="Tortas 25 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 25 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$90.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 25 T', 'torta25')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 25 T',90000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/PANZER PNG-Photoroom.png"
+          alt="Tortas 36 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 36 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$135.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 36 T', 'torta36')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 36 T',135000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/APOCALYPTO PNG-Photoroom.png"
+          alt="Tortas 50 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 50 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$175.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 50 T', 'torta50')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 50 T',175000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/Jurassic-Park-64T-scaled-1000x1081.jpg"
+          alt="Tortas 64 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">
+            Torta 64 T <small> Calibre Grande </small>
+          </h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$650.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 64 T', 'torta64')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 64 T',650000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/COSA-2025-Photoroom-1000x1333.jpg"
+          alt="Tortas 100 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 100 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$420.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 100 T', 'torta100')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 100 T',420000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/ZOMBI-2025-Photoroom-1000x1333.jpg"
+          alt="Tortas 200 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 200 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$770.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 200 T', 'torta200')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 200 T',770000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="/assets/fotosPolvora/torta-rain-forest.png"
+          alt="Tortas 600 T"
+          class="product-image"
+        />
+        <div class="product-info">
+          <h3 class="product-name">Torta 600 T</h3>
+          <div class="product-unit">Unidad</div>
+          <div class="price-video-container">
+            <div class="product-price">$2.300.000</div>
+            <button
+              class="video-btn"
+              onclick="verVideo('Torta 600 T', 'torta600')"
+            >
+              ▶️ Video
+            </button>
+          </div>
+          <button class="buy-btn" onclick="comprar('Torta 600 T', 2600000)">
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://wa.me/573165728348?text=¡Hola!%20Quiero%20consultar%20sobre%20sus%20productos%20de%20pirotecnia"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+        />
+      </svg>
+    </a>
+
+    <!-- Modal de Video -->
+    <div id="videoModal" class="video-modal">
+      <div class="video-modal-content">
+        <div class="video-modal-header">
+          <h3 id="videoTitle">Video del Producto</h3>
+          <button class="close-modal" onclick="cerrarModal()">&times;</button>
+        </div>
+        <div id="videoContentArea"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>🔥 C&I PYROSHOP - Tu tienda de confianza 🔥</p>
+      <div class="contact-info">
+        <p>📱 WhatsApp: +57 316 572 8348</p>
+        <p>⚠️ Uso responsable de productos pirotécnicos</p>
+      </div>
+    </footer>
+
+    <script>
+      const productVideos = {
+        volador5: "https://www.youtube.com/watch?v=CF5btVhdaVM",
+        bengalas15: "https://www.youtube.com/watch?v=oqNYTUxkSxU",
+        bengalas30: "https://www.youtube.com/watch?v=6_wo0XkOlUM",
+        krazy: "https://www.youtube.com/watch?v=jJLgM5ReM_M",
+        silver: "https://www.youtube.com/watch?v=EZ4UUxb5baY",
+        voladores: "https://www.youtube.com/watch?v=sOvV8oSzePg",
+        superblitz: "https://www.youtube.com/watch?v=CVUDGf4KmmE",
+        rosita: "https://www.youtube.com/watch?v=1WggsHwc77A",
+        torta100: "https://www.youtube.com/watch?v=wzlzNwOl7X8",
+        torta200: "https://www.youtube.com/watch?v=9UuhOjl7hjo",
+        torta600: "https://www.youtube.com/watch?v=rqAfdvJczdw",
+        torta64: "https://www.youtube.com/watch?v=-IvuM5fVUxQ",
+        torta16: "https://www.youtube.com/watch?v=naM3-DJ5oSA",
+        torta25: "https://www.youtube.com/watch?v=8c8Tw8sblWs",
+        torta36: "https://www.youtube.com/watch?v=UDXweuJJN5E",
+        torta50: "https://www.youtube.com/watch?v=dpNZZ4J6epg",
+        GatlingG: "https://www.youtube.com/watch?v=KZ4B215lUBI",
+        GatlingP: "https://www.youtube.com/watch?v=YvBmWiXr15A",
+      };
+
+      // Abrir modal de video
+      function verVideo(producto, videoId) {
+        const videoUrl = productVideos[videoId];
+        const modal = document.getElementById("videoModal");
+        const title = document.getElementById("videoTitle");
+        const contentArea = document.getElementById("videoContentArea");
+
+        title.textContent = "Video - " + producto;
+
+        if (videoUrl) {
+          contentArea.innerHTML = `
+        <div class="video-container">
+          <iframe src="${videoUrl.replace("watch?v=", "embed/")}"
+                  frameborder="0" allowfullscreen></iframe>
+        </div>
+      `;
+        } else {
+          contentArea.innerHTML = `
+        <div class="no-video-message">
+          <h3>🎇 Aún no tenemos video de este producto</h3>
+          <p>Puedes escribirnos por WhatsApp y te lo enviamos al instante.</p>
+          <a href="https://wa.me/573165728348?text=Hola,%20quiero%20ver%20el%20video%20del%20producto%20${producto}"
+             target="_blank">
+            <button class="contact-video-btn">📩 Enviar Mensaje</button>
+          </a>
+        </div>
+      `;
+        }
+
+        modal.style.display = "block";
+      }
+
+      // Cerrar modal
+      function cerrarModal() {
+        const modal = document.getElementById("videoModal");
+        const contentArea = document.getElementById("videoContentArea");
+        modal.style.display = "none";
+        contentArea.innerHTML = ""; // limpia el iframe para detener el video
+      }
+
+      // Comprar por WhatsApp
+      function comprar(producto, precio) {
+        const mensaje = `Hola, quiero comprar el producto: ${producto} - Precio: $${precio}`;
+        const url = `https://wa.me/573165728348?text=${encodeURIComponent(
+          mensaje
+        )}`;
+        window.open(url, "_blank");
+      }
+
+      // Cerrar modal clic afuera
+      window.onclick = function (event) {
+        const modal = document.getElementById("videoModal");
+        if (event.target === modal) {
+          cerrarModal();
+        }
+      };
+    </script>
+  </body>
+</html>
