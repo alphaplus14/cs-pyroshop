@@ -1,0 +1,348 @@
+/* ==========================================================
+   Catálogo: rejilla, tarjetas de producto y modal de video
+   ========================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: var(--glow);
+  }
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  /* Blanco puro: la mayoría de fotos tienen fondo blanco y así se ven uniformes. */
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+  transition: transform 0.35s ease;
+}
+
+@media (hover: hover) {
+  .card:hover .card-media img {
+    transform: scale(1.04);
+  }
+}
+
+.card-tags {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: calc(100% - 16px);
+  pointer-events: none;
+}
+
+.tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--gold-light);
+  border: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+.tag-masVendido {
+  background: var(--fire);
+  color: var(--on-fire);
+  border-color: transparent;
+}
+
+.tag-nuevo {
+  background: var(--gold);
+  color: var(--on-fire);
+  border-color: transparent;
+}
+
+.tag-ninos {
+  background: #1f3b2d;
+  color: #9ff0c4;
+  border-color: transparent;
+}
+
+.play-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  background: rgba(11, 11, 18, 0.78);
+  color: var(--gold-light);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.play-btn svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+}
+
+.play-btn:hover {
+  transform: scale(1.08);
+  background: var(--fire);
+  color: var(--on-fire);
+  border-color: var(--fire);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card-name small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.card-unit {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.card-price {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin: 8px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.card-actions {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+}
+
+.card-actions .btn {
+  width: 100%;
+  padding: 10px 12px;
+}
+
+@media (min-width: 640px) {
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-name {
+    font-size: 1.1rem;
+  }
+
+  .card-price {
+    font-size: 1.55rem;
+  }
+}
+
+/* Selector de cantidad */
+.qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg-2);
+  min-height: 44px;
+}
+
+.qty button {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: none;
+  background: none;
+  color: var(--gold-light);
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.qty button:hover:not(:disabled) {
+  background: rgba(212, 165, 49, 0.12);
+}
+
+.qty button:disabled {
+  color: var(--muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty output,
+.qty input {
+  min-width: 28px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  background: none;
+  border: none;
+}
+
+.add-btn.added {
+  background: var(--success);
+  box-shadow: none;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-2);
+  padding: 40px 0;
+}
+
+/* ---------- Modales (video, edad) ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(5, 5, 10, 0.86);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-dialog {
+  width: 100%;
+  max-width: 900px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 10px 10px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  font-size: 1.05rem;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+}
+
+.modal-footer .card-price {
+  margin: 0;
+}
