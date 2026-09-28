@@ -405,27 +405,6 @@ h3 {
   color: var(--gold-light);
 }
 
-.social-links {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.social-links a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
-  display: grid;
-  place-items: center;
-  color: var(--gold-light);
-}
-
-.social-links svg {
-  width: 20px;
-  height: 20px;
-}
-
 .legal {
   margin-top: 32px;
   padding-top: 20px;

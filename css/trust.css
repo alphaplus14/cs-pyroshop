@@ -82,6 +82,10 @@
 }
 
 /* ---------- Reseñas ---------- */
+#resenas[hidden] {
+  display: none;
+}
+
 .reviews-grid {
   display: grid;
   gap: 16px;

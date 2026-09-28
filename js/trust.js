@@ -1,4 +1,4 @@
-/* Confianza y cumplimiento: franja de confianza, reseñas, redes, WhatsApp y verificación de edad. */
+/* Confianza y cumplimiento: franja de confianza, reseñas, WhatsApp y verificación de edad. */
 
 (() => {
   const AGE_KEY = "cs_age_ok";
@@ -21,12 +21,12 @@
 
   function renderReviews() {
     const grid = $("#reviews-grid");
-    if (!grid) return;
+    if (!grid || !CONFIG.reviews.length) return;
+    grid.closest("section").hidden = false;
     grid.innerHTML = CONFIG.reviews
       .map(
         (r) => `
         <figure class="review">
-          ${r.placeholder ? '<span class="tag tag-example">Reseña de ejemplo</span>' : ""}
           <div class="stars" aria-label="${r.rating} de 5 estrellas">${ICONS.star.repeat(r.rating)}</div>
           <blockquote>“${escapeHtml(r.text)}”</blockquote>
           <figcaption><strong>${escapeHtml(r.name)}</strong>${r.place ? ` · ${escapeHtml(r.place)}` : ""}</figcaption>
@@ -35,18 +35,6 @@
       .join("");
   }
 
-  function renderSocial() {
-    const box = $("#social-links");
-    if (!box) return;
-    const names = { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok" };
-    box.innerHTML = Object.entries(CONFIG.social)
-      .filter(([, url]) => url)
-      .map(
-        ([key, url]) =>
-          `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" aria-label="${names[key] || key}">${ICONS[key] || ""}</a>`
-      )
-      .join("");
-  }
 
   // Todos los enlaces con data-wa usan el número de CONFIG (un solo lugar para cambiarlo).
   function wireWhatsapp() {
@@ -78,7 +66,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     renderTrust();
     renderReviews();
-    renderSocial();
     wireWhatsapp();
     ageGate();
   });
