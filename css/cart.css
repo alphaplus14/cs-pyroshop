@@ -1,0 +1,399 @@
+/* ==========================================================
+   Carrito: barra móvil, panel lateral, botón de WhatsApp y avisos
+   ========================================================== */
+
+/* ---------- Barra inferior (solo móvil) ---------- */
+.cart-bar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 8px 8px 16px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fire-light), var(--fire));
+  color: var(--on-fire);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 6px 22px rgba(255, 122, 0, 0.35);
+  text-align: left;
+  animation: slide-up 0.3s ease;
+}
+
+.cart-bar[hidden] {
+  display: none;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(120%);
+  }
+}
+
+.cart-bar-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.cart-bar-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cart-bar-total {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.cart-bar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--on-fire);
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 899px) {
+  body.has-cart-bar {
+    --cartbar-h: 78px;
+  }
+}
+
+@media (min-width: 900px) {
+  .cart-bar {
+    display: none !important;
+  }
+}
+
+/* ---------- Panel del carrito ---------- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(5, 5, 10, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.drawer[hidden] {
+  display: none;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 92vh;
+  max-height: 92dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-top: 1px solid var(--border-strong);
+  border-radius: 20px 20px 0 0;
+  box-shadow: var(--shadow);
+  animation: sheet-up 0.28s ease;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (min-width: 900px) {
+  .drawer-panel {
+    left: auto;
+    top: 0;
+    width: 440px;
+    max-height: none;
+    border-top: none;
+    border-left: 1px solid var(--border-strong);
+    border-radius: 0;
+    animation-name: sheet-left;
+  }
+
+  @keyframes sheet-left {
+    from {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer-header h2 {
+  font-size: 1.2rem;
+}
+
+.drawer-body-wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px 20px;
+}
+
+.cart-lines {
+  list-style: none;
+}
+
+.cart-line {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-line img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+
+.cart-line-name {
+  font-weight: 700;
+}
+
+.cart-line-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.cart-line-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cart-line-subtotal {
+  color: var(--gold-light);
+  font-family: var(--font-title);
+}
+
+.qty-sm {
+  width: 124px;
+}
+
+.cart-remove {
+  background: none;
+  color: var(--muted);
+}
+
+.cart-remove:hover {
+  color: var(--danger);
+  background: rgba(255, 90, 90, 0.1);
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 48px 8px;
+  color: var(--text-2);
+}
+
+.cart-empty[hidden],
+.cart-footer[hidden] {
+  display: none;
+}
+
+.cart-empty-icon {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+
+.cart-empty p {
+  margin-bottom: 20px;
+}
+
+.cart-footer {
+  border-top: 1px solid var(--border);
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+  background: var(--bg-2);
+}
+
+.cart-fields {
+  display: grid;
+  gap: 10px;
+  padding: 18px 0 12px;
+}
+
+.cart-fields[hidden] {
+  display: none;
+}
+
+.cart-fields legend {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.cart-fields fieldset {
+  border: none;
+  display: grid;
+  gap: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-2);
+  margin-bottom: 4px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.field select option {
+  background: var(--surface);
+}
+
+.field input::placeholder {
+  color: var(--muted);
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.cart-total-value {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.cart-footer .btn-whatsapp {
+  min-height: 52px;
+  font-size: 1.05rem;
+}
+
+.cart-footer .btn-whatsapp svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cart-footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.link-btn {
+  min-height: 44px;
+  background: none;
+  border: none;
+  color: var(--text-2);
+  text-decoration: underline;
+  font-size: 0.88rem;
+}
+
+.link-btn:hover {
+  color: var(--text);
+}
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + var(--cartbar-h) + env(safe-area-inset-bottom));
+  z-index: 800;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s, bottom 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (min-width: 900px) {
+  .whatsapp-float {
+    right: 24px;
+    bottom: 24px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* ---------- Aviso breve ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  top: calc(var(--header-h) + 12px);
+  z-index: 2500;
+  transform: translate(-50%, -20px);
+  opacity: 0;
+  pointer-events: none;
+  max-width: calc(100% - 32px);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: var(--shadow);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
