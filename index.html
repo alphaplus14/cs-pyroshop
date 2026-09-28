@@ -17,12 +17,14 @@
     />
 
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/products.css" />
 
     <script src="js/config.js" defer></script>
     <script src="js/data.js" defer></script>
     <script src="js/utils.js" defer></script>
     <script src="js/catalog.js" defer></script>
+    <script src="js/hero.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
@@ -40,6 +42,31 @@
     </header>
 
     <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">Pólvora y pirotecnia a domicilio</span>
+            <h1 id="hero-title">Ilumina tus <span class="glow">mejores momentos</span></h1>
+            <p class="hero-sub">
+              Tortas, voladores, bengalas y luces para Velitas, Navidad y Año Nuevo. Arma tu pedido en
+              minutos y confírmalo por WhatsApp.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-fire" href="#catalogo">Ver productos</a>
+              <a class="btn btn-ghost" href="https://wa.me/573165728348" target="_blank" rel="noopener">Escríbenos</a>
+            </div>
+            <!-- La oferta se edita en js/config.js (CONFIG.offer) -->
+            <div class="offer" id="offer" hidden>
+              <span class="offer-badge"></span>
+              <span class="offer-text"></span>
+              <a class="offer-link" href="#catalogo"></a>
+            </div>
+          </div>
+          <img class="hero-logo" src="assets/img/logo.webp" alt="" width="629" height="448" />
+        </div>
+      </section>
+
       <section class="section" id="catalogo" aria-labelledby="catalogo-title">
         <div class="container">
           <div class="section-head">
