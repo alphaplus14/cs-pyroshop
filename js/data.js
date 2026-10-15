@@ -8,7 +8,7 @@
  *   unit      presentación: "Unidad", "Caja X 6"...
  *   price     precio en pesos, solo números (2500, no "$2.500")
  *   image     ruta de la imagen dentro de assets/
- *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, petardos, tortas)
+ *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, tortas)
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
  *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos"]
  */
@@ -17,7 +17,6 @@ const CATEGORIES = {
   luces: "Luces",
   voladores: "Voladores",
   bengalas: "Bengalas",
-  petardos: "Petardos",
   tortas: "Tortas",
   combos: "Combos",
 };
@@ -129,16 +128,6 @@ const PRODUCTS = [
     image: IMG + "SUPER-BLITZ-2025-Photoroom-1000x1000.jpg",
     category: "luces",
     video: "https://www.youtube.com/watch?v=CVUDGf4KmmE",
-    tags: [],
-  },
-  {
-    id: "totes",
-    name: "Totes",
-    unit: "Caja X 20",
-    price: 16000,
-    image: IMG + "totes.jpg",
-    category: "petardos",
-    video: "",
     tags: [],
   },
   {
