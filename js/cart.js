@@ -65,11 +65,15 @@ const Cart = (() => {
 /* ---------- Interfaz del carrito ---------- */
 (() => {
   const drawer = () => $("#cart-drawer");
+  const isMadeToOrder = (item) => (item.tags || []).includes("bajoPedido");
 
   function orderMessage() {
     const c = Cart.customer;
     const items = Cart.lines()
-      .map((l) => `• ${l.qty} x ${l.name} (${l.unit}) — ${formatPrice(l.subtotal)}`)
+      .map(
+        (l) =>
+          `• ${l.qty} x ${l.name} (${l.unit}) — ${formatPrice(l.subtotal)}${isMadeToOrder(l) ? " _(bajo pedido)_" : ""}`
+      )
       .join("\n");
     return [
       `¡Hola ${CONFIG.brand}! 🎆 Quiero hacer este pedido:`,
@@ -135,7 +139,7 @@ const Cart = (() => {
           <img src="${escapeHtml(l.image)}" alt="" width="64" height="64" loading="lazy" />
           <div class="cart-line-info">
             <p class="cart-line-name">${escapeHtml(l.name)}</p>
-            <p class="cart-line-meta">${escapeHtml(l.unit)} · ${formatPrice(l.price)} c/u</p>
+            <p class="cart-line-meta">${escapeHtml(l.unit)} · ${formatPrice(l.price)} c/u${isMadeToOrder(l) ? " · Bajo pedido" : ""}</p>
             <div class="cart-line-row">
               <div class="qty qty-sm" role="group" aria-label="Cantidad de ${escapeHtml(l.name)}">
                 <button type="button" data-action="dec" data-id="${l.id}" aria-label="Quitar uno" ${l.qty <= 1 ? "disabled" : ""}>−</button>

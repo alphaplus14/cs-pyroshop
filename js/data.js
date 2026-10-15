@@ -10,7 +10,7 @@
  *   image     ruta de la imagen dentro de assets/
  *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, tortas)
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
- *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos"]
+ *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido"]
  */
 
 const CATEGORIES = {
@@ -25,6 +25,7 @@ const TAGS = {
   masVendido: "Más vendido",
   nuevo: "Nuevo",
   ninos: "Ideal para niños",
+  bajoPedido: "Bajo pedido",
 };
 
 const IMG = "assets/fotosPolvora/";
@@ -199,7 +200,7 @@ const PRODUCTS = [
     image: IMG + "Jurassic-Park-64T-scaled-1000x1081.jpg",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=-IvuM5fVUxQ",
-    tags: [],
+    tags: ["bajoPedido"],
   },
   {
     id: "torta100",
@@ -209,7 +210,7 @@ const PRODUCTS = [
     image: IMG + "COSA-2025-Photoroom-1000x1333.jpg",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=wzlzNwOl7X8",
-    tags: ["masVendido"], // EJEMPLO: revisa las etiquetas
+    tags: ["masVendido", "bajoPedido"], // EJEMPLO: revisa las etiquetas
   },
   {
     id: "torta200",
@@ -219,7 +220,7 @@ const PRODUCTS = [
     image: IMG + "ZOMBI-2025-Photoroom-1000x1333.jpg",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=9UuhOjl7hjo",
-    tags: [],
+    tags: ["bajoPedido"],
   },
   {
     id: "torta600",
@@ -229,7 +230,7 @@ const PRODUCTS = [
     image: IMG + "torta-rain-forest.png",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=rqAfdvJczdw",
-    tags: [],
+    tags: ["bajoPedido"],
   },
 ];
 
