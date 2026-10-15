@@ -10,7 +10,7 @@
  *   image     ruta de la imagen dentro de assets/
  *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, tortas)
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
- *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido"]
+ *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido", "parejas"]
  */
 
 const CATEGORIES = {
@@ -26,6 +26,7 @@ const TAGS = {
   nuevo: "Nuevo",
   ninos: "Ideal para niños",
   bajoPedido: "Bajo pedido",
+  parejas: "Ideal para parejas",
 };
 
 const IMG = "assets/fotosPolvora/";
@@ -130,6 +131,16 @@ const PRODUCTS = [
     category: "luces",
     video: "https://www.youtube.com/watch?v=CVUDGf4KmmE",
     tags: [],
+  },
+  {
+    id: "globos",
+    name: "Globo de los Deseos",
+    unit: "Unidad",
+    price: 13000,
+    image: IMG + "optimizadas/globos.webp",
+    category: "luces",
+    video: "https://www.youtube.com/watch?v=VBi4eMxf7A0",
+    tags: ["parejas"],
   },
   {
     id: "gatlingG",
