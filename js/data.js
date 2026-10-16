@@ -225,7 +225,7 @@ const PRODUCTS = [
     name: "Torta 36 T",
     note: "Calibre grande",
     unit: "Unidad",
-    price: 165000,
+    price: 215000,
     image: IMG + "optimizadas/torta36-calibre-grande.webp",
     category: "tortas",
     video: "",
