@@ -45,7 +45,6 @@ const PRODUCTS = [
   },
   {
     id: "volador5",
-    hidden: true,
     name: "Volador 5 Golpes",
     unit: "Unidad",
     price: 8000,
