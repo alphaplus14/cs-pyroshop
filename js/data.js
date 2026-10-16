@@ -111,7 +111,7 @@ const PRODUCTS = [
   },
   {
     id: "silver",
-    comingSoon: true,
+    comingSoon: false,
     name: "Volcán Silver",
     unit: "Unidad",
     price: 8000,
@@ -299,19 +299,6 @@ const PRODUCTS = [
  *   image   imagen de portada (puede ser la de uno de sus productos)
  */
 const COMBOS = [
-  {
-    id: "combo-velitas",
-    name: "Combo Noche de Velitas",
-    description: "Luces suaves para compartir en familia.",
-    items: [
-      ["chispitas", 2],
-      ["rosita", 2],
-      ["minivolcan", 2],
-      ["bengalas15", 1],
-    ],
-    price: 19000,
-    image: IMG + "PYRO-SPARKLER-2025-Photoroom-1000x1000.jpg",
-  },
   {
     id: "combo-familiar",
     name: "Combo Fiesta Familiar",
