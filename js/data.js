@@ -178,7 +178,7 @@ const PRODUCTS = [
     id: "torta16",
     name: "Torta 16 T",
     unit: "Unidad",
-    price: 46000,
+    price: 50000,
     image: IMG + "Aquiles-16T-1000x1040.jpg",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=naM3-DJ5oSA",
@@ -188,7 +188,7 @@ const PRODUCTS = [
     id: "torta25",
     name: "Torta 25 T",
     unit: "Unidad",
-    price: 80000,
+    price: 74000,
     image: IMG + "optimizadas/angry.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=8c8Tw8sblWs",
@@ -219,7 +219,7 @@ const PRODUCTS = [
     id: "torta50",
     name: "Torta 50 T",
     unit: "Unidad",
-    price: 185000,
+    price: 158000,
     image: IMG + "optimizadas/apocalypto.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=dpNZZ4J6epg",
@@ -270,9 +270,10 @@ const PRODUCTS = [
 ];
 
 /*
- * Combos. ⚠️ TODOS LOS COMBOS DE ABAJO SON DE EJEMPLO: cambia nombres, productos y precios.
+ * Combos.
  *   items   lista de [id del producto, cantidad]; el ahorro se calcula solo
- *           comparando "price" con la suma de los productos por separado.
+ *           comparando "price" con la suma de los productos por separado
+ *           (precio del catálogo × cantidad).
  *   image   imagen de portada (puede ser la de uno de sus productos)
  */
 const COMBOS = [
@@ -286,9 +287,8 @@ const COMBOS = [
       ["minivolcan", 2],
       ["bengalas15", 1],
     ],
-    price: 19000, // EJEMPLO
+    price: 19000,
     image: IMG + "PYRO-SPARKLER-2025-Photoroom-1000x1000.jpg",
-    placeholder: true,
   },
   {
     id: "combo-familiar",
@@ -296,12 +296,11 @@ const COMBOS = [
     description: "Una torta, voladores y volcanes para una noche completa.",
     items: [
       ["torta16", 1],
-      ["voladores", 3],
+      ["volador5", 3],
       ["silver", 2],
     ],
-    price: 72000, // EJEMPLO
+    price: 83000,
     image: IMG + "Aquiles-16T-1000x1040.jpg",
-    placeholder: true,
   },
   {
     id: "combo-anio-nuevo",
@@ -312,8 +311,7 @@ const COMBOS = [
       ["bengalas30", 2],
       ["volador5", 2],
     ],
-    price: 159000, // EJEMPLO
+    price: 139000,
     image: IMG + "optimizadas/panzer.webp",
-    placeholder: true,
   },
 ];

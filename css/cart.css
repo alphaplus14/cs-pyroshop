@@ -308,6 +308,18 @@
   color: var(--gold-light);
 }
 
+.cart-shipping {
+  margin: -6px 0 12px;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  text-align: right;
+}
+
+.cart-shipping.is-free {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
 .cart-footer .btn-whatsapp {
   min-height: 52px;
   font-size: 1.05rem;

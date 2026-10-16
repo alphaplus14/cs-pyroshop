@@ -128,6 +128,11 @@ const Cart = (() => {
     $(".cart-fields", el).hidden = empty;
     $(".cart-total-value", el).textContent = formatPrice(Cart.total());
 
+    const missing = CONFIG.freeShippingFrom - Cart.total();
+    const shipping = $(".cart-shipping", el);
+    shipping.textContent = missing > 0 ? `Te faltan ${formatPrice(missing)} para envío gratis` : "¡Tienes envío gratis!";
+    shipping.classList.toggle("is-free", missing <= 0);
+
     // Conserva el foco en el mismo control tras volver a pintar la lista.
     const active = document.activeElement;
     const focusKey = list.contains(active) ? `${active.dataset.action}|${active.dataset.id}` : null;

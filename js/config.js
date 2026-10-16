@@ -12,6 +12,9 @@ const CONFIG = {
   // Zona de entrega (se usa en la franja de confianza y el footer).
   zone: "Cartago (Valle del Cauca)",
 
+  // Envío gratis desde este total, en pesos (franja de confianza y carrito).
+  freeShippingFrom: 100000,
+
   // Oferta de temporada que aparece en el hero. Pon enabled: false para ocultarla.
   offer: {
     enabled: true,
@@ -22,9 +25,9 @@ const CONFIG = {
   },
 
   // Franja de confianza debajo del hero. icon: truck | card | clock | shield
-  // {zone} se reemplaza por el valor de arriba.
+  // {zone} y {freeShipping} se reemplazan por los valores de arriba.
   trust: [
-    { icon: "truck", title: "Entrega a domicilio", text: "{zone}" },
+    { icon: "truck", title: "Entrega a domicilio", text: "{zone}. Envío gratis en pedidos desde {freeShipping}" },
     { icon: "card", title: "Paga como quieras", text: "Nequi, Nu, Bancolombia, efectivo o contra entrega" },
     { icon: "shield", title: "Compra segura", text: "Confirmas tu pedido por WhatsApp" },
   ],

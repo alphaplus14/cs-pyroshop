@@ -3,7 +3,8 @@
 (() => {
   const AGE_KEY = "cs_age_ok";
 
-  const fill = (text) => text.replace("{zone}", CONFIG.zone);
+  const fill = (text) =>
+    text.replace("{zone}", CONFIG.zone).replace("{freeShipping}", formatPrice(CONFIG.freeShippingFrom));
 
   function renderTrust() {
     const list = $("#trust-list");

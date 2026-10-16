@@ -133,7 +133,6 @@ const Catalog = (() => {
     const items = comboItemsText(combo)
       .map((t) => `<li>${escapeHtml(t)}</li>`)
       .join("");
-    const example = combo.placeholder ? `<span class="tag tag-example">Ejemplo</span>` : "";
     const savingHtml =
       saving > 0
         ? `<s class="combo-regular" aria-label="Precio por separado">${formatPrice(regular)}</s>
@@ -143,7 +142,6 @@ const Catalog = (() => {
     card.innerHTML = `
       <div class="${variant === "feature" ? "combo-media" : "card-media"}">
         ${imageTag(combo.image, combo.name, false)}
-        <div class="card-tags">${example}</div>
       </div>
       <div class="${variant === "feature" ? "combo-body" : "card-body"}">
         <h3 class="${variant === "feature" ? "combo-name" : "card-name"}">${escapeHtml(combo.name)}</h3>
@@ -212,6 +210,17 @@ const Catalog = (() => {
     grid.replaceChildren(...COMBOS.map((c) => comboCard(c, "feature")));
   }
 
+  // En desarrollo, avisa si un combo no sale más barato que sus productos por separado.
+  function checkCombos() {
+    if (!["localhost", "127.0.0.1", ""].includes(location.hostname)) return;
+    COMBOS.forEach((c) => {
+      const regular = comboRegularPrice(c);
+      if (c.price >= regular) {
+        console.warn(`Combo "${c.name}": cuesta ${formatPrice(c.price)} y sus productos suman ${formatPrice(regular)}.`);
+      }
+    });
+  }
+
   // ---------- Modal de video ----------
   function openVideo(product) {
     const modal = $("#video-modal");
@@ -241,6 +250,7 @@ const Catalog = (() => {
     renderFilters();
     renderProducts();
     renderCombos();
+    checkCombos();
     const modal = $("#video-modal");
     if (modal) $(".modal-close", modal).addEventListener("click", () => Overlay.close(modal));
   }
