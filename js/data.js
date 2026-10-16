@@ -11,6 +11,7 @@
  *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, tortas)
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
  *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido", "parejas"]
+ *   hidden    (opcional) true para ocultarlo del catálogo sin borrarlo
  */
 
 const CATEGORIES = {
@@ -44,9 +45,10 @@ const PRODUCTS = [
   },
   {
     id: "volador5",
+    hidden: true,
     name: "Volador 5 Golpes",
     unit: "Unidad",
-    price: 9000,
+    price: 8000,
     image: IMG + "VOLADOR-5G-2025-Photoroom-1000x743.jpg",
     category: "voladores",
     video: "https://www.youtube.com/watch?v=CF5btVhdaVM",
@@ -96,7 +98,7 @@ const PRODUCTS = [
     id: "silver",
     name: "Volcán Silver",
     unit: "Unidad",
-    price: 7000,
+    price: 8000,
     image: IMG + "SILVER-2025-Photoroom-1000x743.jpg",
     category: "luces",
     video: "https://www.youtube.com/watch?v=EZ4UUxb5baY",
@@ -104,6 +106,7 @@ const PRODUCTS = [
   },
   {
     id: "voladores",
+    hidden: true,
     name: "Voladores",
     unit: "Unidad",
     price: 4000,
@@ -190,6 +193,17 @@ const PRODUCTS = [
     image: IMG + "optimizadas/panzer.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=UDXweuJJN5E",
+    tags: [],
+  },
+  {
+    id: "torta36g",
+    name: "Torta 36 T",
+    note: "Calibre grande",
+    unit: "Unidad",
+    price: 165000,
+    image: IMG + "optimizadas/torta36-calibre-grande.webp",
+    category: "tortas",
+    video: "",
     tags: [],
   },
   {

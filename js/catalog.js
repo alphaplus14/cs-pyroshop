@@ -2,6 +2,7 @@
 
 const Catalog = (() => {
   let currentFilter = "todos";
+  const visibleProducts = () => PRODUCTS.filter((p) => !p.hidden);
 
   function comboRegularPrice(combo) {
     return combo.items.reduce((sum, [id, qty]) => {
@@ -166,8 +167,9 @@ const Catalog = (() => {
     if (currentFilter === "combos") {
       COMBOS.forEach((c) => grid.appendChild(comboCard(c, "grid")));
     } else {
+      const products = visibleProducts();
       const list =
-        currentFilter === "todos" ? PRODUCTS : PRODUCTS.filter((p) => p.category === currentFilter);
+        currentFilter === "todos" ? products : products.filter((p) => p.category === currentFilter);
       list.forEach((p, i) => grid.appendChild(productCard(p, i)));
     }
 
@@ -180,8 +182,9 @@ const Catalog = (() => {
     const bar = $("#filters");
     if (!bar) return;
 
-    const counts = { todos: PRODUCTS.length, combos: COMBOS.length };
-    PRODUCTS.forEach((p) => (counts[p.category] = (counts[p.category] || 0) + 1));
+    const products = visibleProducts();
+    const counts = { todos: products.length, combos: COMBOS.length };
+    products.forEach((p) => (counts[p.category] = (counts[p.category] || 0) + 1));
 
     const chips = [["todos", "Todos"], ...Object.entries(CATEGORIES)].filter(([key]) => counts[key]);
     bar.innerHTML = chips
