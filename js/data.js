@@ -148,7 +148,7 @@ const PRODUCTS = [
     id: "globos",
     name: "Globo de los Deseos",
     unit: "Unidad",
-    price: 13000,
+    price: 15000,
     image: IMG + "optimizadas/globos.webp",
     category: "luces",
     video: "https://www.youtube.com/watch?v=VBi4eMxf7A0",
