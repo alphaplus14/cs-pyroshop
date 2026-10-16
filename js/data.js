@@ -10,7 +10,7 @@
  *   image     ruta de la imagen dentro de assets/
  *   category  una de las claves de CATEGORIES (luces, voladores, bengalas, tortas)
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
- *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido", "parejas"]
+ *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido", "parejas", "recomendada"]
  *   hidden    (opcional) true para ocultarlo del catálogo sin borrarlo
  */
 
@@ -28,6 +28,7 @@ const TAGS = {
   ninos: "Ideal para niños",
   bajoPedido: "Bajo pedido",
   parejas: "Ideal para parejas",
+  recomendada: "Recomendada",
 };
 
 const IMG = "assets/fotosPolvora/";
@@ -188,7 +189,7 @@ const PRODUCTS = [
     id: "torta25",
     name: "Torta 25 T",
     unit: "Unidad",
-    price: 74000,
+    price: 78000,
     image: IMG + "optimizadas/angry.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=8c8Tw8sblWs",
@@ -202,7 +203,7 @@ const PRODUCTS = [
     image: IMG + "optimizadas/panzer.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=UDXweuJJN5E",
-    tags: [],
+    tags: ["recomendada"],
   },
   {
     id: "torta36g",
@@ -218,8 +219,9 @@ const PRODUCTS = [
   {
     id: "torta50",
     name: "Torta 50 T",
+    note: "Calibre grande",
     unit: "Unidad",
-    price: 158000,
+    price: 185000,
     image: IMG + "optimizadas/apocalypto.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=dpNZZ4J6epg",
