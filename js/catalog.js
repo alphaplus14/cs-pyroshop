@@ -98,11 +98,12 @@ const Catalog = (() => {
       .map((t) => `<span class="tag tag-${t}">${TAGS[t]}</span>`)
       .join("");
     const hasVideo = Boolean(youtubeId(product.video));
+    const soon = product.comingSoon ? `<span class="tag tag-comingSoon">Muy pronto disponible</span>` : "";
 
     card.innerHTML = `
       <div class="card-media">
         ${imageTag(product.image, `${product.name} - ${product.unit}`, index < 4)}
-        ${tags ? `<div class="card-tags">${tags}</div>` : ""}
+        ${tags || soon ? `<div class="card-tags">${soon}${tags}</div>` : ""}
         ${
           hasVideo
             ? `<button type="button" class="play-btn" aria-label="Ver video de ${escapeHtml(product.name)}">${ICONS.play}</button>`

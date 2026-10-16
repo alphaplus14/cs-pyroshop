@@ -12,6 +12,7 @@
  *   video     (opcional) link de YouTube o solo su ID; si no hay, deja ""
  *   tags      (opcional) lista de claves de TAGS: ["masVendido", "nuevo", "ninos", "bajoPedido", "parejas", "recomendada"]
  *   hidden    (opcional) true para ocultarlo del catálogo sin borrarlo
+ *   comingSoon (opcional) true para mostrarlo como "Muy pronto disponible"; se pide bajo encargo
  */
 
 const CATEGORIES = {
@@ -46,6 +47,7 @@ const PRODUCTS = [
   },
   {
     id: "volador5",
+    comingSoon: true,
     name: "Volador 5 Golpes",
     unit: "Unidad",
     price: 8000,
@@ -56,6 +58,7 @@ const PRODUCTS = [
   },
   {
     id: "volador15",
+    comingSoon: true,
     name: "Volador 15 Golpes",
     unit: "Unidad",
     price: 17000,
@@ -86,6 +89,7 @@ const PRODUCTS = [
   },
   {
     id: "krazy",
+    comingSoon: true,
     name: "Fuente Krazy",
     unit: "Unidad",
     price: 8000,
@@ -96,6 +100,7 @@ const PRODUCTS = [
   },
   {
     id: "rosita",
+    comingSoon: true,
     name: "Rosita",
     unit: "Unidad",
     price: 2500,
@@ -106,6 +111,7 @@ const PRODUCTS = [
   },
   {
     id: "silver",
+    comingSoon: true,
     name: "Volcán Silver",
     unit: "Unidad",
     price: 8000,
@@ -116,6 +122,7 @@ const PRODUCTS = [
   },
   {
     id: "voladores",
+    comingSoon: true,
     hidden: true,
     name: "Voladores",
     unit: "Unidad",
@@ -137,6 +144,7 @@ const PRODUCTS = [
   },
   {
     id: "superblitz",
+    comingSoon: true,
     name: "Super Blitz",
     unit: "Unidad",
     price: 8000,
@@ -147,6 +155,7 @@ const PRODUCTS = [
   },
   {
     id: "globos",
+    comingSoon: true,
     name: "Globo de los Deseos",
     unit: "Unidad",
     price: 15000,
@@ -157,6 +166,7 @@ const PRODUCTS = [
   },
   {
     id: "gatlingG",
+    comingSoon: true,
     name: "Gatling Grande",
     unit: "Unidad",
     price: 180000,
@@ -167,6 +177,7 @@ const PRODUCTS = [
   },
   {
     id: "gatlingP",
+    comingSoon: true,
     name: "Gatling pequeña",
     unit: "Unidad",
     price: 90000,
@@ -177,6 +188,7 @@ const PRODUCTS = [
   },
   {
     id: "torta16",
+    comingSoon: true,
     name: "Torta 16 T",
     unit: "Unidad",
     price: 50000,
@@ -187,6 +199,7 @@ const PRODUCTS = [
   },
   {
     id: "torta25",
+    comingSoon: true,
     name: "Torta 25 T",
     unit: "Unidad",
     price: 78000,
@@ -197,6 +210,7 @@ const PRODUCTS = [
   },
   {
     id: "torta36",
+    comingSoon: true,
     name: "Torta 36 T",
     unit: "Unidad",
     price: 125000,
@@ -207,6 +221,7 @@ const PRODUCTS = [
   },
   {
     id: "torta36g",
+    comingSoon: true,
     name: "Torta 36 T",
     note: "Calibre grande",
     unit: "Unidad",
@@ -218,6 +233,7 @@ const PRODUCTS = [
   },
   {
     id: "torta50",
+    comingSoon: true,
     name: "Torta 50 T",
     note: "Calibre Mediano",
     unit: "Unidad",
@@ -229,6 +245,7 @@ const PRODUCTS = [
   },
   {
     id: "torta64",
+    comingSoon: true,
     hidden: true,
     name: "Torta 64 T",
     note: "Calibre grande",
@@ -241,6 +258,7 @@ const PRODUCTS = [
   },
   {
     id: "torta100",
+    comingSoon: true,
     name: "Torta 100 T",
     unit: "Unidad",
     price: 350000,
@@ -251,6 +269,7 @@ const PRODUCTS = [
   },
   {
     id: "torta200",
+    comingSoon: true,
     name: "Torta 200 T",
     unit: "Unidad",
     price: 665000,
@@ -261,6 +280,7 @@ const PRODUCTS = [
   },
   {
     id: "torta600",
+    comingSoon: true,
     name: "Torta 600 T",
     unit: "Unidad",
     price: 2200000,

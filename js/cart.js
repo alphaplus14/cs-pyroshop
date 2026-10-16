@@ -66,13 +66,17 @@ const Cart = (() => {
 (() => {
   const drawer = () => $("#cart-drawer");
   const isMadeToOrder = (item) => (item.tags || []).includes("bajoPedido");
+  // Productos "muy pronto disponible" (o combos que los incluyen) se piden bajo encargo.
+  const isOnRequest = (item) =>
+    item.comingSoon || (item.items || []).some(([id]) => PRODUCTS.find((p) => p.id === id)?.comingSoon);
+  const orderNote = (item) => (isOnRequest(item) ? "Bajo encargo" : isMadeToOrder(item) ? "Bajo pedido" : "");
 
   function orderMessage() {
     const c = Cart.customer;
     const items = Cart.lines()
       .map(
         (l) =>
-          `• ${l.qty} x ${l.name} (${l.unit}) — ${formatPrice(l.subtotal)}${isMadeToOrder(l) ? " _(bajo pedido)_" : ""}`
+          `• ${l.qty} x ${l.name} (${l.unit}) — ${formatPrice(l.subtotal)}${orderNote(l) ? ` _(${orderNote(l).toLowerCase()})_` : ""}`
       )
       .join("\n");
     return [
@@ -144,7 +148,7 @@ const Cart = (() => {
           <img src="${escapeHtml(l.image)}" alt="" width="64" height="64" loading="lazy" />
           <div class="cart-line-info">
             <p class="cart-line-name">${escapeHtml(l.name)}</p>
-            <p class="cart-line-meta">${escapeHtml(l.unit)} · ${formatPrice(l.price)} c/u${isMadeToOrder(l) ? " · Bajo pedido" : ""}</p>
+            <p class="cart-line-meta">${escapeHtml(l.unit)} · ${formatPrice(l.price)} c/u${orderNote(l) ? ` · ${orderNote(l)}` : ""}</p>
             <div class="cart-line-row">
               <div class="qty qty-sm" role="group" aria-label="Cantidad de ${escapeHtml(l.name)}">
                 <button type="button" data-action="dec" data-id="${l.id}" aria-label="Quitar uno" ${l.qty <= 1 ? "disabled" : ""}>−</button>
