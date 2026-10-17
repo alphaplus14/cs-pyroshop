@@ -213,7 +213,7 @@ const PRODUCTS = [
     comingSoon: true,
     name: "Torta 36 T",
     unit: "Unidad",
-    price: 125000,
+    price: 105000,
     image: IMG + "optimizadas/panzer.webp",
     category: "tortas",
     video: "https://www.youtube.com/watch?v=UDXweuJJN5E",
